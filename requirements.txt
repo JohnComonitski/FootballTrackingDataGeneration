@@ -1,0 +1,8 @@
+git+https://github.com/roboflow/sports.git#egg=sports
+onnxruntime-gpu==1.18.0 --extra-index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/
+ultralytics
+roboflow
+gdown 
+inference-gpu
+onnxruntime-gpu==1.18.0
+supervision>=0.23.0

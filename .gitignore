@@ -1,3 +1,10 @@
+.DS_Store
+*.DS_Store
+*/__pycache__/
+env.py
+track/footage/*
+track/output/*
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
