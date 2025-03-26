@@ -1,10 +1,8 @@
 from match import Match
 
 match = Match()
-path = "tracking_results.csv"
-match.import_raw_data(path)
-#path = "tracking_data.csv"
-#match.import_metrica(path)
+CSV_PATH = './track/output/2e57b9_0.csv'
+match.import_metrica(CSV_PATH)
 
 # Get Ball Path
 ball = match.ball
