@@ -1,8 +1,12 @@
+pandas==2.2.3
+scikit_learn==1.5.2
+torch==2.4.1+cu118
 git+https://github.com/roboflow/sports.git#egg=sports
 onnxruntime-gpu==1.18.0 --extra-index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/
-ultralytics
-roboflow
+ultralytics==8.3.7
+roboflow==1.1.47
 gdown 
 inference-gpu
 onnxruntime-gpu==1.18.0
 supervision>=0.23.0
+pandas
