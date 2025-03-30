@@ -8,10 +8,10 @@ Convert football match footage into proffesional level player & ball tracking da
 - [Football Tracking Data Generation](fFootball-tracking-data-generation)
   - [Getting Started](#getting-started)
   - [Match Footage to Tracking Data Pipeline](#match-footage-to-tracking-data-Pipeline)
-    - [Training a Player Detection Model](training-a-player-detection-model)
-    - [Tracking Match Footage](tracking-match-footage)
-    - [Cleaning Tracking Data](cleaning-tracking-data)
-    - [Generating Tracking Clips](generating-tracking-clips)
+    - Training a Player Detection Model
+    - Tracking Match Footage
+    - Cleaning Tracking Data
+    - Generating Tracking Clips
   - [Resources](#resources)
   - [Licenses](#license)
 
