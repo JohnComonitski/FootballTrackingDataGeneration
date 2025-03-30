@@ -14,7 +14,49 @@ Convert Football footage into proffesional level player & ball tracking data
   - [Licenses](#license)
 
 ## Getting Started
-...
+1. Clone the repository
+
+    ```shell
+    git clone https://github.com/JohnComonitski/FootballTrackingDataGeneration.git
+    ```
+
+2. Move to the project directory
+
+    ```shell
+    cd FootballTrackingDataGeneration
+    ```
+
+3. Create and activate a Python
+    [virtual environment](https://docs.python.org/3/library/venv.html#creating-virtual-environments).
+    On GNU/Linux systems this is as easy as:
+
+    ```shell
+    python3 -m venv .venv
+    . .venv/bin/activate
+    # Work inside the environment.
+    ```
+
+4. Install the Python dependencies
+    ```shell
+    pip install -r requirements.txt
+    ```
+
+5. Get a Roboflow API Key
+    Create an account with [Roboflow](https://roboflow.com/) and get an API key.
+
+6. Create env.py
+
+    ```shell
+    touch env.py
+    ```
+
+7. Add your API Key to env.py
+
+    ```python
+    keys = {
+        "roboflow_api" : "ROBOFLOW API KEY HERE"
+    }
+    ```
 
 ## Match Footage to Tracking Data Pipeline
 ...
