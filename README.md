@@ -1,5 +1,7 @@
 # Football Tracking Data Generation
-Convert Football footage into proffesional level player & ball tracking data 
+Convert football match footage into proffesional level player & ball tracking data utilizing [Roboflow's](https://roboflow.com/) machine learning and computer vision libraries. The goal of this project is to enable clubs at any level to turn their match footage into match tracking data and match event data they can use to step step their match analysis to the next level!
+![Tracking Example](./examples/tracking.png)
+
 
 ### Table of Contents
 <!--TOC-->
