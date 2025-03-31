@@ -77,11 +77,22 @@ The creation & training of a player detection model is performed by [train/train
 ### Tracking Match Footage
 Tracking match footage is performed by [track/track.ipynb](./track/track.ipynb).
 **How to Track Match Footage**
-1. Copy the clip you would like to track to [track/footage](./track/footage).
+1. Copy the clip you would like to track to the [track/footage](./track/footage) directory.
 2. Open [track/track.ipynb](./track/track.ipynb)
-- If you want ...
-- If you also want ...
-3. 
+- If you want a tracking video output, set **_generate_video_** to **_1_** in the Configurations section.
+```python
+generate_video = 1
+```
+- If you want teams tracked, set **_track_teams_** to **_1_** in the Configurations section.
+```python
+track_teams = 1
+```
+- If you want results saved as a csv, set **_save_results_** to **_1_** in the Configurations section.
+```python
+save_results = 1
+```
+3. Run the notebook to track the footage.
+- Once complete, results will be saved to [track/output](./track/output) directory.
 
 ### Cleaning Tracking Data
 How to use the event data cleaning library
