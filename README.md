@@ -83,9 +83,9 @@ Tracking match footage is performed by [track/track.ipynb](./track/track.ipynb).
 1. Copy the clip you would like to track to the [track/footage](./track/footage) directory.
 2. Open [track/track.ipynb](./track/track.ipynb)
 - If you want a tracking video output, set **_generate_video_** to **_1_** in the Configurations section.
-```python
-generate_video = 1
-```
+    ```python
+    generate_video = 1
+    ```
 - If you want teams tracked, set **_track_teams_** to **_1_** in the Configurations section.
 ```python
 track_teams = 1
