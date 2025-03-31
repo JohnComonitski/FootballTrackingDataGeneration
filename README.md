@@ -75,7 +75,13 @@ The creation & training of a player detection model is performed by [train/train
 - If you are using a machine without a GPU, you may find faster training results using Google Collab and their (relatively) afforable GPU pricing.
 
 ### Tracking Match Footage
-How to Track
+Tracking match footage is performed by [track/track.ipynb](./track/track.ipynb).
+**How to Track Match Footage**
+1. Copy the clip you would like to track to [track/footage](./track/footage).
+2. Open [track/track.ipynb](./track/track.ipynb)
+- If you want ...
+- If you also want ...
+3. 
 
 ### Cleaning Tracking Data
 How to use the event data cleaning library
