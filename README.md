@@ -68,7 +68,7 @@ Convert football match footage into proffesional level player & ball tracking da
 ...
 
 ### Training a Player Detection Model
-The creation & training of a player detection model can be found within [train/train.ipynb](./train/train.ipynb)
+The creation & training of a player detection model can be found within [train/train.ipynb](./train/train.ipynb). If you work through this notebook, you will have a player detection model capable of detecting players, balls and referees. Models will be saved to the [model](./model) directory. Once your model is trained, you are ready to start tracking match footage!
 
 ### Tracking Match Footage
 How to Track
