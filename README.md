@@ -87,13 +87,13 @@ Tracking match footage is performed by [track/track.ipynb](./track/track.ipynb).
     generate_video = 1
     ```
 - If you want teams tracked, set **_track_teams_** to **_1_** in the Configurations section.
-```python
-track_teams = 1
-```
+    ```python
+    track_teams = 1
+    ```
 - If you want results saved as a csv, set **_save_results_** to **_1_** in the Configurations section.
-```python
-save_results = 1
-```
+    ```python
+    save_results = 1
+    ```
 3. Run the notebook to track the footage.
 > [!Note] 
 > Once complete, results will be saved to [track/output](./track/output) directory.
