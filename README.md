@@ -87,7 +87,7 @@ Tracking match footage is performed by [track/track.ipynb](./track/track.ipynb).
     generate_video = 1
     ```
 > [!Warning] 
-> The output at this stage will likely be rough and copy tracking footage with many miss detections. I do not recommend you turn this on at this stage, as it will slow down tracking. This is best used as a reference to make sure your tracking is on the right track.
+> The output at this stage will likely be rough and choppy tracking footage with many miss detections. I do not recommend you turn this on at this stage, as it will slow down tracking. This is best used as a reference to make sure your tracking is on the right track.
 - If you want teams tracked, set **_track_teams_** to **_1_** in the Configurations section:
     ```python
     track_teams = 1
