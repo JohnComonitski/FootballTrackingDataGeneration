@@ -95,8 +95,8 @@ Tracking match footage is performed by [track/track.ipynb](./track/track.ipynb).
     save_results = 1
     ```
 3. Run the notebook to track the footage.
-    > [!Note] 
-    > Once complete, results will be saved to [track/output](./track/output) directory.
+> [!Note] 
+> Once complete, results will be saved to [track/output](./track/output) directory.
 
 ### Cleaning Tracking Data
 How to use the event data cleaning library
