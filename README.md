@@ -76,6 +76,7 @@ The creation & training of a player detection model is performed by [train/train
 
 ### Tracking Match Footage
 Tracking match footage is performed by [track/track.ipynb](./track/track.ipynb).
+
 **How to Track Match Footage**
 1. Copy the clip you would like to track to the [track/footage](./track/footage) directory.
 2. Open [track/track.ipynb](./track/track.ipynb)
