@@ -37,11 +37,16 @@ Convert football match footage into proffesional level player & ball tracking da
     . .venv/bin/activate
     # Work inside the environment.
     ```
+  > [!NOTE]
+  > This project was built with Python 3.11
+
 
 4. Install the Python dependencies
     ```shell
     pip install -r requirements.txt
     ```
+  > [!NOTE]
+  > **_requirements.txt_** includes commented out packages which utilize your GPU. If your machine has a GPU, I recommend you uncomment out those packages.
 
 5. Get a Roboflow API Key
    
@@ -50,15 +55,13 @@ Convert football match footage into proffesional level player & ball tracking da
 6. Create env.py
 
     ```shell
-    touch env.py
+    touch env/keys.env
     ```
 
 7. Add your API Key to env.py
 
-    ```python
-    keys = {
-        "roboflow_api" : "ROBOFLOW API KEY HERE"
-    }
+    ```
+    ROBOFLOW_API=XXXXXXXXXXXXXXX
     ```
 
 ## Match Footage to Tracking Data Pipeline
