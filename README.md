@@ -52,13 +52,13 @@ Convert football match footage into proffesional level player & ball tracking da
    
     Create an account with [Roboflow](https://roboflow.com/) and get an API key.
 
-6. Create env.py
+6. Create env/keys.env
 
     ```shell
     touch env/keys.env
     ```
 
-7. Add your API Key to env.py
+7. Add your API Key to env/keys.env
 
     ```
     ROBOFLOW_API=XXXXXXXXXXXXXXX
@@ -68,7 +68,7 @@ Convert football match footage into proffesional level player & ball tracking da
 ...
 
 ### Training a Player Detection Model
-How to Train
+The creation & training of a player detection model can be found within [train/train.ipynb](./train/train.ipynb)
 
 ### Tracking Match Footage
 How to Track
