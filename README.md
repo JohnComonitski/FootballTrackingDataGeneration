@@ -93,7 +93,7 @@ track_teams = 1
 save_results = 1
 ```
 3. Run the notebook to track the footage.
-> [!Output] 
+> [!Note] 
 > Once complete, results will be saved to [track/output](./track/output) directory.
 
 ### Cleaning Tracking Data
