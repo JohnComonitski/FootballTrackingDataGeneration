@@ -10,11 +10,16 @@ class Match():
         self.current_frame = 1
         self.frames = 0
         self.source = None
+        self.file_path = None
+        self.file_name = None
 
-    def import_metrica(self, path):
+    def import_metrica(self, file_path, file_name):
         self.source = "metrica"
         headers = []
         frames = []
+        self.file_path = file_path
+        self.file_name = file_name
+        path = file_path + file_name
         with open(path, "r") as file:
             count = 0
             for line in file:
@@ -63,7 +68,10 @@ class Match():
                     player_count += 1
         self.players = players
 
-    def import_raw_data(self, path):
+    def import_raw_data(self, file_path, file_name):
+        self.file_path = file_path
+        self.file_name = file_name
+        path = file_path + file_name
         self.source = "raw"
         frames = []
         with open(path, "r") as file:
@@ -204,7 +212,7 @@ class Match():
         elif(self.source == "raw"):
             data = self.__export_raw()
 
-        csv_writer = csv.writer(open('match_data.csv', 'w', newline='\n'))
+        csv_writer = csv.writer(open('./output/' + self.file_name, 'w', newline='\n'))
         csv_writer.writerows(data)
 
     def __export_metrica(self):

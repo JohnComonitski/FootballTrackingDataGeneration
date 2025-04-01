@@ -92,16 +92,24 @@ Tracking match footage is performed by [track/track.ipynb](./track/track.ipynb).
     ```python
     track_teams = 1
     ```
-- If you want results saved as a csv, set **_save_results_** to **_1_** in the Configurations section:
-    ```python
-    save_results = 1
-    ```
+
 3. Run the notebook to track the footage.
 > [!Note] 
 > Once complete, results will be saved to [track/output](./track/output) directory.
 
 ### Cleaning Tracking Data
-How to use the event data cleaning library
+Tracking results can be found in the [track/output](./track/output) directory as a CSV. Often the results of the tracking are imperfect and requires clean up. Tracking data can be cleaned from the [data_cleanup/cleanup.ipynb] notebook. This notebook imports the Match library, which includes a series tools to evaluate & clean tracking results.
+
+**How to Clean Tracking Data**
+1. Open the [Cleanup Notebook](./data_cleanup/cleanup.ipynb)
+2. Add the name of the file you wish to clean to the notebook in the **_Tracking Data Import_** section.
+```python
+PATH = "./../track/output/"
+FILE_NAME = ""
+```
+3. Go to the **_Data Cleaning_** section. This is where you can work with the **_match_** object to clean your tracking data.
+4. Once cleaning is complete, your results will be exported to the [data_cleanup/output](./data_cleanup/output) directory.
+
 
 ### Generating Tracking Clips
 Turn cleaned tracking data into event data footage
