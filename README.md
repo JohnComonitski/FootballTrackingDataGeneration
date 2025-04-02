@@ -65,9 +65,13 @@ Convert football match footage into proffesional level player & ball tracking da
     ```
 
 ## Match Footage to Tracking Data Pipeline
-...
+The pipeline that takes raw match footage and geneartes proffesional level player tracking data is as simple as 4 step...
+1. Train a Player Detection Model
+2. Track Your Match Footage
+3. Clean Your Tracking Data
+4. Generate a Tracking Data Clip
 
-### Training a Player Detection Model
+### Step 1: Training a Player Detection Model
 The creation & training of a player detection model is performed by [train/train.ipynb](./train/train.ipynb). 
 
 If you work through this notebook, you will have a player detection model capable of detecting players, balls and referees. Models will be saved to the [model](./model) directory. Once your model is trained, you are ready to start tracking match footage!
@@ -76,7 +80,7 @@ If you work through this notebook, you will have a player detection model capabl
 - Training can take quite a long time. Depending on the resources available to your machine.
 - If you are using a machine without a GPU, you may find faster training results using Google Collab and their (relatively) afforable GPU pricing.
 
-### Tracking Match Footage
+### Step 2: Tracking Match Footage
 Tracking match footage is performed by [track/track.ipynb](./track/track.ipynb).
 
 **How to Track Match Footage**
@@ -97,7 +101,7 @@ Tracking match footage is performed by [track/track.ipynb](./track/track.ipynb).
 > [!Note] 
 > Once complete, results will be saved to [track/output](./track/output) directory.
 
-### Cleaning Tracking Data
+### Step 3: Cleaning Tracking Data
 Tracking results can be found in the [track/output](./track/output) directory as a CSV. Often the initial tracking results are imperfect and requires clean up. Tracking data can be cleaned using the [Tracking Data Clean Up Notebook](./data_cleanup/cleanup.ipynb) notebook. This notebook imports the Match library, which includes a series tools to evaluate & clean tracking results.
 
 **How to Clean Tracking Data**
@@ -170,7 +174,7 @@ player = match.player(16)
 player.change_name("Harry Kane")
 ```
 
-### Generating Tracking Clips
+### Step 2: Generating Tracking Clips
 
 Whether you have raw tracking data or you just finished cleaning your tracking data, you can turn that tracking data into a tracking data clip using the `csv_to_video.py` script. Update 
 ```python
