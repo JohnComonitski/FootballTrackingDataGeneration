@@ -98,7 +98,7 @@ Tracking match footage is performed by [track/track.ipynb](./track/track.ipynb).
 > Once complete, results will be saved to [track/output](./track/output) directory.
 
 ### Cleaning Tracking Data
-Tracking results can be found in the [track/output](./track/output) directory as a CSV. Often the initial tracking results are imperfect and requires clean up. Tracking data can be cleaned from the [Tracking Data Clean Up Notebook](./data_cleanup/cleanup.ipynb) notebook. This notebook imports the Match library, which includes a series tools to evaluate & clean tracking results.
+Tracking results can be found in the [track/output](./track/output) directory as a CSV. Often the initial tracking results are imperfect and requires clean up. Tracking data can be cleaned using the [Tracking Data Clean Up Notebook](./data_cleanup/cleanup.ipynb) notebook. This notebook imports the Match library, which includes a series tools to evaluate & clean tracking results.
 
 **How to Clean Tracking Data**
 1. Open the [Tracking Data Clean Up Notebook](./data_cleanup/cleanup.ipynb)
@@ -170,9 +170,16 @@ player = match.player(16)
 player.change_name("Harry Kane")
 ```
 
-
 ### Generating Tracking Clips
-Turn cleaned tracking data into event data footage
+
+Whether you have raw tracking data or you just finished cleaning your tracking data, you can turn that tracking data into a tracking data clip using the `csv_to_video.py` script. Update 
+```python
+FILE_NAME = ''
+CSV_PATH = './track/output/' + FILE_NAME
+SOURCE_VIDEO_PATH = './track/footage/' + FILE_NAME
+```
+at the top of the script to include your file name `FILE_NAME`, the path of your tracking data `CSV_PATH`, and the source video `SOURCE_VIDEO_PATH`. Once done, run the script `python csv_to_video.py` and your tracking data will generate tracking data clips showing off your results on the pitch and as a 2D mini-map.
+
 
 ## Resources
 - [Skalskip92's Football AI Tutorial: From Basics to Advanced Stats with Python](https://www.youtube.com/watch?v=aBVGKoNZQUw) - Essential to getting this project off the group and the foundation of the tracking & training notebook.
