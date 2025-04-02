@@ -112,8 +112,10 @@ Tracking results can be found in the [track/output](./track/output) directory as
 
 **Cleaning Tracking Data & Working with the Match Library**
 
-**Cleaning Ball Pathing**
-The ball path is probably the most difficult object to track. Calling `match.ball` will give you the **_Ball_** object, which as a method called `clean_path()` which will review the ball's path and remove outliar detections, fill in the gaps for missing detections and flatten arc's in the ball's 2D path. 
+**Cleaning Ball Pathing:**
+
+he ball path is probably the most difficult object to track. Calling `match.ball` will give you the **_Ball_** object, which as a method called `clean_path()` which will review the ball's path and remove outliar detections, fill in the gaps for missing detections and flatten arc's in the ball's 2D path. 
+
 ```python
 ball = match.ball
 ball.clean_path()
