@@ -9,6 +9,7 @@ train/datasets/*
 models/*
 lib/
 data_cleanup/output/*.csv
+data_cleanup/main.py
 !data_cleanup/lib/
 !data_cleanup/lib/*.py
 

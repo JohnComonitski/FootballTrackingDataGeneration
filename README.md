@@ -110,26 +110,35 @@ Tracking results can be found in the [track/output](./track/output) directory as
 3. Go to the **_Data Cleaning_** section. This is where you can work with the **_match_** object to clean your tracking data.
 4. Once cleaning is complete, your results will be exported to the [data_cleanup/output](./data_cleanup/output) directory.
 
-**Cleaning Tracking Data & Working with the Match Library**
-
 **Cleaning Ball Pathing:**
 
-he ball path is probably the most difficult object to track. Calling `match.ball` will give you the **_Ball_** object, which as a method called `clean_path()` which will review the ball's path and remove outliar detections, fill in the gaps for missing detections and flatten arc's in the ball's 2D path. 
+The ball path is probably the most difficult object to track. Calling `match.ball` will give you the **_Ball_** object, which has a method called `clean_path()`, which will review the ball's path and remove outlier detections, fill in the gaps for missing detections, and flatten arcs in the ball's 2D path. 
 
 ```python
 ball = match.ball
 ball.clean_path()
 ```
 
-**Visualize an Object's Path**
-...
+**Visualize an Object's Path:**
+
+If you want to visualize your data cleaning, the **_Ball_** object and the **_Player_** object can both call `plot()` and this will plot their path.
+
 ```python
 ball = match.ball
 ball.plot()
 ```
 
+**Get a Player Object**
+
+Players are represented as a **_Player_** object. These players and their tracking data can be programmatically edited by first getting their respective **_Player_** object by passing their player ID to `match.player()`.
+```python
+# Remove Players
+player = match.player(1)
+```
+
 **Remove Players**
-...
+
+If an object has been missdetected as a **_Player_** object, `match.remove_player()` can be called to remove them from your tracking data.
 ```python
 # Remove Players
 player = match.player(32)
@@ -137,7 +146,8 @@ match.remove_player(player)
 ```
 
 **Combine Players**
-...
+
+It is possible that a player could be tracked, lost, and then reemerge as a new play. In these cases, you may want to merge these players to combine their tracking data using `match.merge_players()`.
 ```python
 player_1 = match.player(13)
 player_2 = match.player(39)
@@ -145,11 +155,21 @@ match.merge_players(player_1, player_2)
 ```
 
 **Change a Player's Team**
-...
+
+If a player has been assigned to the wrong team, that **_Player_** object can call `change_team()` to reassign their team (`0` is home and `1` is away).
 ```python
 player = match.player(16)
 player.change_team(1)
 ```
+
+**Rename a Player**
+
+If you want a player to have a different name other than their ID while visualizing them, you can rename them using `change_name()`
+```python
+player = match.player(16)
+player.change_name("Harry Kane")
+```
+
 
 ### Generating Tracking Clips
 Turn cleaned tracking data into event data footage
