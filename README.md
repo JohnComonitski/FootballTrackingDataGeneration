@@ -86,20 +86,24 @@ Tracking match footage is performed by [track/track.ipynb](./track/track.ipynb).
 **How to Track Match Footage**
 1. Copy the clip you would like to track to the [track/footage](./track/footage) directory.
 2. Open [track/track.ipynb](./track/track.ipynb)
-- If you want a tracking video output, set **_generate_video_** to **_1_** in the Configurations section:
+- If you want a tracking video output, set `generate_video` to `1` in the Configurations section:
     ```python
     generate_video = 1
     ```
-> [!Warning] 
-> The output at this stage will likely be rough and choppy tracking footage with many miss detections. I do not recommend you turn this on at this stage, as it will slow down tracking. This is best used as a reference to make sure your tracking is on the right track and not your final output.
-- If you want teams tracked, set **_track_teams_** to **_1_** in the Configurations section:
+    > [!Warning] 
+    > The output at this stage will likely be rough and choppy tracking footage with many miss detections. I do not recommend you turn this on at this stage, as it will slow down tracking. This is best used as a reference to make sure your tracking is on the right track and not your final output.
+- If you want teams tracked, set `track_teams` to `1` in the Configurations section:
     ```python
     track_teams = 1
     ```
 
-3. Run the notebook to track the footage.
-> [!Note] 
-> Once complete, results will be saved to [track/output](./track/output) directory.
+3. Update the `SOURCE_VIDEO_PATH` to point to your footage.
+    ```python
+    SOURCE_VIDEO_PATH = './footage/XXXXXXXX.mp4'
+    ```
+4. Run the notebook to track the footage.
+    > [!Note] 
+    > Once complete, results will be saved to [track/output](./track/output) directory.
 
 ### Step 3: Cleaning Tracking Data
 Tracking results can be found in the [track/output](./track/output) directory as a CSV. Often the initial tracking results are imperfect and requires clean up. Tracking data can be cleaned using the [Tracking Data Clean Up Notebook](./data_cleanup/cleanup.ipynb) notebook. This notebook imports the Match library, which includes a series tools to evaluate & clean tracking results.
