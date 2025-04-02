@@ -98,10 +98,10 @@ Tracking match footage is performed by [track/track.ipynb](./track/track.ipynb).
 > Once complete, results will be saved to [track/output](./track/output) directory.
 
 ### Cleaning Tracking Data
-Tracking results can be found in the [track/output](./track/output) directory as a CSV. Often the initial tracking results are imperfect and requires clean up. Tracking data can be cleaned from the [Cleanup Notebook](./data_cleanup/cleanup.ipynb) notebook. This notebook imports the Match library, which includes a series tools to evaluate & clean tracking results.
+Tracking results can be found in the [track/output](./track/output) directory as a CSV. Often the initial tracking results are imperfect and requires clean up. Tracking data can be cleaned from the [Tracking Data Clean Up Notebook](./data_cleanup/cleanup.ipynb) notebook. This notebook imports the Match library, which includes a series tools to evaluate & clean tracking results.
 
 **How to Clean Tracking Data**
-1. Open the [Cleanup Notebook](./data_cleanup/cleanup.ipynb)
+1. Open the [Tracking Data Clean Up Notebook](./data_cleanup/cleanup.ipynb)
 2. Add the name of the file you wish to clean to the notebook in the **_Tracking Data Import_** section.
     ```python
     PATH = "./../track/output/"
@@ -110,6 +110,44 @@ Tracking results can be found in the [track/output](./track/output) directory as
 3. Go to the **_Data Cleaning_** section. This is where you can work with the **_match_** object to clean your tracking data.
 4. Once cleaning is complete, your results will be exported to the [data_cleanup/output](./data_cleanup/output) directory.
 
+**Cleaning Tracking Data & Working with the Match Library**
+
+**Cleaning Ball Pathing**
+The ball path is probably the most difficult object to track. Calling `match.ball` will give you the **_Ball_** object, which as a method called `clean_path()` which will review the ball's path and remove outliar detections, fill in the gaps for missing detections and flatten arc's in the ball's 2D path. 
+```python
+ball = match.ball
+ball.clean_path()
+```
+
+**Visualize an Object's Path**
+...
+```python
+ball = match.ball
+ball.plot()
+```
+
+**Remove Players**
+...
+```python
+# Remove Players
+player = match.player(32)
+match.remove_player(player)
+```
+
+**Combine Players**
+...
+```python
+player_1 = match.player(13)
+player_2 = match.player(39)
+match.merge_players(player_1, player_2)
+```
+
+**Change a Player's Team**
+...
+```python
+player = match.player(16)
+player.change_team(1)
+```
 
 ### Generating Tracking Clips
 Turn cleaned tracking data into event data footage
