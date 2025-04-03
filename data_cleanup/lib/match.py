@@ -1,6 +1,6 @@
-from moment import Moment
-from player import Player
-from ball import Ball
+from lib.moment import Moment
+from lib.player import Player
+from lib.ball import Ball
 import csv
 
 class Match():

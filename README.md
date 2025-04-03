@@ -90,8 +90,8 @@ Tracking match footage is performed by [track/track.ipynb](./track/track.ipynb).
     ```python
     generate_video = 1
     ```
-    > [!Warning] 
-    > The output at this stage will likely be rough and choppy tracking footage with many miss detections. I do not recommend you turn this on at this stage, as it will slow down tracking. This is best used as a reference to make sure your tracking is on the right track and not your final output.
+> [!Warning] 
+> The output at this stage will likely be rough and choppy tracking footage with many miss detections. I do not recommend you turn this on at this stage, as it will slow down tracking. This is best used as a reference to make sure your tracking is on the right track and not your final output.
 - If you want teams tracked, set `track_teams` to `1` in the Configurations section:
     ```python
     track_teams = 1
@@ -102,8 +102,8 @@ Tracking match footage is performed by [track/track.ipynb](./track/track.ipynb).
     SOURCE_VIDEO_PATH = './footage/XXXXXXXX.mp4'
     ```
 4. Run the notebook to track the footage.
-    > [!Note] 
-    > Once complete, results will be saved to [track/output](./track/output) directory.
+> [!Note] 
+> Once complete, results will be saved to [track/output](./track/output) directory.
 
 ### Step 3: Cleaning Tracking Data
 Tracking results can be found in the [track/output](./track/output) directory as a CSV. Often the initial tracking results are imperfect and requires clean up. Tracking data can be cleaned using the [Tracking Data Clean Up Notebook](./data_cleanup/cleanup.ipynb) notebook. This notebook imports the Match library, which includes a series tools to evaluate & clean tracking results.
@@ -126,6 +126,7 @@ The ball path is probably the most difficult object to track. Calling `match.bal
 ball = match.ball
 ball.clean_path()
 ```
+![ball_path](./examples/path_before_after.png)
 
 **Visualize an Object's Path:**
 
@@ -135,12 +136,12 @@ If you want to visualize your data cleaning, the **_Ball_** object and the **_Pl
 ball = match.ball
 ball.plot()
 ```
+![ball_path](./examples/ball_path.png)
 
 **Get a Player Object**
 
 Players are represented as a **_Player_** object. These players and their tracking data can be programmatically edited by first getting their respective **_Player_** object by passing their player ID to `match.player()`.
 ```python
-# Remove Players
 player = match.player(1)
 ```
 
@@ -148,7 +149,6 @@ player = match.player(1)
 
 If an object has been missdetected as a **_Player_** object, `match.remove_player()` can be called to remove them from your tracking data.
 ```python
-# Remove Players
 player = match.player(32)
 match.remove_player(player)
 ```
@@ -161,6 +161,7 @@ player_1 = match.player(13)
 player_2 = match.player(39)
 match.merge_players(player_1, player_2)
 ```
+![ball_path](./examples/merge.png)
 
 **Change a Player's Team**
 
@@ -169,16 +170,17 @@ If a player has been assigned to the wrong team, that **_Player_** object can ca
 player = match.player(16)
 player.change_team(1)
 ```
+![change_team](./examples/change_team.png)
 
 **Rename a Player**
 
-If you want a player to have a different name other than their ID while visualizing them, you can rename them using `change_name()`
+If you want a player to have a different name other than their ID, you can rename them using `change_name()`
 ```python
 player = match.player(16)
 player.change_name("Harry Kane")
 ```
 
-### Step 2: Generating Tracking Clips
+### Step 4: Generating Tracking Clips
 
 Whether you have raw tracking data or you just finished cleaning your tracking data, you can turn that tracking data into a tracking data clip using the `csv_to_video.py` script. Update 
 ```python

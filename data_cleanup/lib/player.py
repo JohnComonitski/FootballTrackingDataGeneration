@@ -1,4 +1,4 @@
-from frame import Frame
+from lib.frame import Frame
 import matplotlib.pyplot as plt
 
 class Player():

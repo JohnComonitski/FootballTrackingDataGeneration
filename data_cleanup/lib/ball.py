@@ -1,5 +1,5 @@
-from frame import Frame
-from utils import fill_gap, remove_arcs_from_path, filter_lone_points, near_by_filter
+from lib.frame import Frame
+from lib.utils import fill_gap, remove_arcs_from_path, filter_lone_points, near_by_filter
 import matplotlib.pyplot as plt
 
 class Ball():

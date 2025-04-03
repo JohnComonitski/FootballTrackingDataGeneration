@@ -8,11 +8,11 @@ from supervision.draw.utils import draw_image
 import numpy as np
 from tqdm import tqdm
 import csv
-from FootballTrackingDataGeneration.data_cleanup.lib.detection_classes import Coordinate, Detections, Rect
+from data_cleanup.lib.detection_classes import Coordinate, Detections, Rect
 
-FILE_NAME = ''
-CSV_PATH = './track/output/' + FILE_NAME
-SOURCE_VIDEO_PATH = './track/footage/' + FILE_NAME
+FILE_NAME = '2e57b9_0'
+CSV_PATH = './track/output/' + FILE_NAME + ".csv"
+SOURCE_VIDEO_PATH = './track/footage/' + FILE_NAME + ".mp4"
 
 ellipse_annotator = sv.EllipseAnnotator(
     color=sv.ColorPalette.from_hex(['#00BFFF', '#FF1493', '#FFD700']),
