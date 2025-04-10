@@ -71,6 +71,8 @@ The pipeline that takes raw match footage and generates proffesional level playe
 3. Clean Your Tracking Data
 4. Generate a Tracking Data Clip
 
+![before_after](./examples/before_after.png)
+
 ### Step 1: Training a Player Detection Model
 The creation & training of a player detection model is performed by [train/train.ipynb](./train/train.ipynb). 
 
@@ -189,6 +191,8 @@ CSV_PATH = './track/output/' + FILE_NAME
 SOURCE_VIDEO_PATH = './track/footage/' + FILE_NAME
 ```
 at the top of the script to include your file name `FILE_NAME`, the path of your tracking data `CSV_PATH`, and the source video `SOURCE_VIDEO_PATH`. Once done, run the script `python csv_to_video.py` and your tracking data will generate tracking data clips showing off your results on the pitch and as a 2D mini-map.
+
+![before_after](./examples/before_after.png)
 
 
 ## Resources
