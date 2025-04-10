@@ -65,13 +65,14 @@ Convert football match footage into proffesional level player & ball tracking da
     ```
 
 ## Match Footage to Tracking Data Pipeline
-The pipeline that takes raw match footage and generates proffesional level player tracking data is as simple as 4 steps:
+
+![before_after](./examples/before_after.png)
+
+Taking raw match footage and generating proffesional level player tracking data is as simple as 4 steps:
 1. Train a Player Detection Model
 2. Track Your Match Footage
 3. Clean Your Tracking Data
 4. Generate a Tracking Data Clip
-
-![before_after](./examples/before_after.png)
 
 ### Step 1: Training a Player Detection Model
 The creation & training of a player detection model is performed by [train/train.ipynb](./train/train.ipynb). 
