@@ -7,6 +7,8 @@ roboflow==1.1.47
 gdown 
 supervision>=0.23.0
 pandas
+inference
+yolov5
 #Uncomment these if you have a GPU
 #inference-gpu
 #onnxruntime-gpu==1.18.0 --extra-index-url https://aiinfra.pkgs.visualstudio.com/PublicPackages/_packaging/onnxruntime-cuda-12/pypi/simple/

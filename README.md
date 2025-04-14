@@ -1,5 +1,5 @@
 # Football Tracking Data Generation
-Convert football match footage into proffesional level player & ball tracking data utilizing [Roboflow's](https://roboflow.com/) machine learning and computer vision libraries. The goal of this project is to enable clubs at any level to turn their match footage into match tracking data and match event data they can use to step step their match analysis to the next level!
+Convert football match footage into proffesional level player & ball tracking data utilizing [Roboflow's](https://roboflow.com/) machine learning and computer vision libraries. The goal of this project is to enable clubs at any level to turn their match footage into match tracking data and match event data, which they can use to step their match analysis to the next level!
 ![Tracking Example](./examples/tracking.png)
 
 
@@ -68,7 +68,7 @@ Convert football match footage into proffesional level player & ball tracking da
 
 ![before_after](./examples/before_after.png)
 
-Taking raw match footage and generating proffesional level player tracking data is as simple as 4 steps:
+Taking raw match footage and generating proffesional level player tracking data follows a 4 step process:
 1. Train a Player Detection Model
 2. Track Your Match Footage
 3. Clean Your Tracking Data
@@ -77,39 +77,53 @@ Taking raw match footage and generating proffesional level player tracking data 
 ### Step 1: Training a Player Detection Model
 The creation & training of a player detection model is performed by [train/train.ipynb](./train/train.ipynb). 
 
-If you work through this notebook, you will have a player detection model capable of detecting players, balls and referees. Models will be saved to the [model](./model) directory. Once your model is trained, you are ready to start tracking match footage!
+If you work through this notebook, you will have a player detection model capable of detecting players, balls and referees. Models will be saved to the [model/](./model) directory as a `.pt` file. Once your model is trained, you are ready to start tracking match footage!
 
 **Tips!**
-- Training can take quite a long time. Depending on the resources available to your machine.
+- Training can take quite a long time, depending on the resources available to your machine.
 - If you are using a machine without a GPU, you may find faster training results using Google Collab and their (relatively) afforable GPU pricing.
 
 ### Step 2: Tracking Match Footage
 Tracking match footage is performed by [track/track.ipynb](./track/track.ipynb).
 
 **How to Track Match Footage**
-1. Copy the clip you would like to track to the [track/footage](./track/footage) directory.
-2. Open [track/track.ipynb](./track/track.ipynb)
+1. Copy the clip you would like to track to the [track/footage/](./track/footage) directory.
+2. Open [track/track.ipynb](./track/track.ipynb) and update your configuration variables if need be.
 - If you want a tracking video output, set `generate_video` to `1` in the Configurations section:
     ```python
-    generate_video = 1
+    GENERATE_VIDEO = 1
     ```
 > [!Warning] 
 > The output at this stage will likely be rough and choppy tracking footage with many miss detections. I do not recommend you turn this on at this stage, as it will slow down tracking. This is best used as a reference to make sure your tracking is on the right track and not your final output.
 - If you want teams tracked, set `track_teams` to `1` in the Configurations section:
     ```python
-    track_teams = 1
+    TRACK_TEAMS = 1
     ```
 
-3. Update the `SOURCE_VIDEO_PATH` to point to your footage.
+3. In the **_Getting Your Model_** section, either import models from Roboflow or point your notebook to your trained models.
     ```python
-    SOURCE_VIDEO_PATH = './footage/XXXXXXXX.mp4'
+    PLAYER_MODEL_FILE_NAME = 'model.pt'
+    PLAYER_MODEL_PATH = "./../models/" + PLAYER_MODEL_FILE_NAME
+    PLAYER_DETECTION_MODEL = YOLO(PLAYER_MODEL_PATH)
     ```
-4. Run the notebook to track the footage.
+    ```python
+    FIELD_MODEL_FILE_NAME = 'best.pt'
+    FIELD_MODEL_PATH = "./../models/" + FIELD_MODEL_FILE_NAME
+    FIELD_DETECTION_MODEL = YOLO(FIELD_MODEL_PATH)
+    ```
+
+4. Update the `VIDEO_FILE` and `SOURCE_VIDEO_PATH` variables to point to your footage.
+    ```python
+    VIDEO_FILE = "2e57b9_0.mp4"
+    SOURCE_VIDEO_PATH = './footage/' + VIDEO_FILE
+    ```
+
+5. Run the notebook to track your footage.
 > [!Note] 
-> Once complete, results will be saved to [track/output](./track/output) directory.
+> Once complete, results will be saved to [track/output/](./track/output) directory.
 
 ### Step 3: Cleaning Tracking Data
-Tracking results can be found in the [track/output](./track/output) directory as a CSV. Often the initial tracking results are imperfect and requires clean up. Tracking data can be cleaned using the [Tracking Data Clean Up Notebook](./data_cleanup/cleanup.ipynb) notebook. This notebook imports the Match library, which includes a series tools to evaluate & clean tracking results.
+Tracking results can be found in the [track/output/](./track/output) directory as a CSV. Often the initial tracking results are imperfect and requires clean up. Tracking data can be cleaned using the [Tracking Data Clean Up Notebook](./data_cleanup/cleanup.ipynb) notebook. This notebook imports the Match library, which includes a series of tools to evaluate & clean tracking results.
 
 **How to Clean Tracking Data**
 1. Open the [Tracking Data Clean Up Notebook](./data_cleanup/cleanup.ipynb)
@@ -119,7 +133,7 @@ Tracking results can be found in the [track/output](./track/output) directory as
     FILE_NAME = ""
     ```
 3. Go to the **_Data Cleaning_** section. This is where you can work with the **_match_** object to clean your tracking data.
-4. Once cleaning is complete, your results will be exported to the [data_cleanup/output](./data_cleanup/output) directory.
+4. Once cleaning is complete, your results will be exported to the [data_cleanup/output/](./data_cleanup/output) directory.
 
 **Cleaning Ball Pathing:**
 
