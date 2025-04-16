@@ -2,6 +2,7 @@
 *.DS_Store
 */__pycache__/
 env.py
+*.mp4
 track/footage/*
 track/output/*
 train/datasets/*

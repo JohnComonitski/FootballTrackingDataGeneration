@@ -133,7 +133,7 @@ Tracking results can be found in the [track/output/](./track/output) directory a
     FILE_NAME = ""
     ```
 3. Go to the **_Data Cleaning_** section. This is where you can work with the **_match_** object to clean your tracking data.
-4. Once cleaning is complete, your results will be exported to the [data_cleanup/output/](./data_cleanup/output) directory.
+4. Once cleaning is complete, run the notebook and your results will be exported to the [data_cleanup/output/](./data_cleanup/output) directory.
 
 **Cleaning Ball Pathing:**
 
