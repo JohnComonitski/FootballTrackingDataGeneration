@@ -112,10 +112,10 @@ Tracking match footage is performed by [track/track.ipynb](./track/track.ipynb).
     FIELD_DETECTION_MODEL = YOLO(FIELD_MODEL_PATH)
     ```
 
-4. Update the `VIDEO_FILE` and `SOURCE_VIDEO_PATH` variables to point to your footage.
+4. In the Go to the **_Data Source_** section Update the `VIDEO_FILE` and `SOURCE_VIDEO_PATH` variables to point to your footage. Footage is expected as a MP4 file and the `VIDEO_FILE` variable should not include the file type.
     ```python
-    VIDEO_FILE = "2e57b9_0.mp4"
-    SOURCE_VIDEO_PATH = './footage/' + VIDEO_FILE
+    VIDEO_FILE = "2e57b9_0"
+    SOURCE_VIDEO_PATH = './footage/' + VIDEO_FILE + ".mp4"
     ```
 
 5. Run the notebook to track your footage.
